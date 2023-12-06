@@ -6,15 +6,15 @@ SRC_DIR := src
 INC_DIR := include
 
 # Path to the library's header files and the library file itself
-LIB_INC_DIR := $(LIB_DIR)
-LIBS := -L$(LIB_BUILD_DIR) -lcomms  -lcore 
+LIB_INC_DIR := $(LIB_DIR)/Com
+LIBS := -L$(LIB_BUILD_DIR) -lcomms  -lcore -lusb
 
 # Compiler and linker
 CC := g++
 LD := g++
 
 # Compiler and linker flags
-CFLAGS := -I$(INC_DIR) -I$(LIB_INC_DIR) -Wall
+CFLAGS := -I$(INC_DIR) -I$(LIB_DIR)/Core/Inc -I$(LIB_DIR)/Comms/Inc -I$(LIB_DIR)/Usb/Inc -Wall -g -Og
 LDFLAGS := $(LIBS)
 
 # Source and object files
